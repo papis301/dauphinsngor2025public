@@ -1,0 +1,16 @@
+<h1>Galerie</h1>
+<a href="{{ path('media_upload') }}">Uploader une photo/vidéo</a>
+
+<div style="display: flex; flex-wrap: wrap;">
+    {% for item in media %}
+        <div style="margin: 10px;">
+            {% if item.type == 'image' %}
+                <img src="/uploads/{{ item.filename }}" width="300">
+            {% elseif item.type == 'video' %}
+                <video width="300" controls>
+                    <source src="/uploads/{{ item.filename }}">
+                </video>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
