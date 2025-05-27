@@ -1,0 +1,9 @@
+{# templates/article/new.html.twig #}
+<h1>Nouvel article</h1>
+
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.youtubeUrl) }}
+    <button type="submit">Publier</button>
+{{ form_end(form) }}

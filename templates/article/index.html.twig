@@ -1,0 +1,16 @@
+{# templates/article/index.html.twig #}
+<h1>Liste des articles</h1>
+
+<a href="{{ path('article_new') }}">Ajouter un article</a>
+
+<ul>
+    {% for article in articles %}
+        <li>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.content|slice(0, 100) ~ '...' }}</p>
+            <a href="{{ path('article_show', { id: article.id }) }}">Voir plus</a>
+        </li>
+    {% else %}
+        <li>Aucun article trouvé.</li>
+    {% endfor %}
+</ul>

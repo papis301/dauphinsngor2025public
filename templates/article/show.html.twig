@@ -1,0 +1,12 @@
+{# templates/article/show.html.twig #}
+<h1>{{ article.title }}</h1>
+<p>{{ article.content }}</p>
+
+{% if article.youtubeUrl %}
+    <h3>Vidéo liée :</h3>
+    <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/{{ article.youtubeUrl | split('?v=')[1] ?? article.youtubeUrl | split('/') | last }}"
+        title="Vidéo YouTube" frameborder="0"
+        allowfullscreen>
+    </iframe>
+{% endif %}
