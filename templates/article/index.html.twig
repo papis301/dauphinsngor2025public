@@ -7,8 +7,15 @@
     {% for article in articles %}
         <li>
             <h2>{{ article.title }}</h2>
+            
+
+            <p><iframe width="560" height="315"
+                src="https://www.youtube.com/embed/{{ article.youtubeUrl | split('?v=')[1] ?? article.youtubeUrl | split('/') | last }}"
+                title="Vidéo YouTube" frameborder="0"
+                allowfullscreen>
+            </iframe></p>
             <p>{{ article.content|slice(0, 100) ~ '...' }}</p>
-            <a href="{{ path('article_show', { id: article.id }) }}">Voir plus</a>
+            <p><a href="{{ path('article_show', { id: article.id }) }}">Voir plus</a></p>
         </li>
     {% else %}
         <li>Aucun article trouvé.</li>

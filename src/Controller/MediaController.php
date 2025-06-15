@@ -13,7 +13,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class MediaController extends AbstractController
 {
-    #[Route('/', name: 'media_home')]
+    #[Route('/media', name: 'media_home')]
     public function index(MediaRepository $repo): Response
     {
         $media = $repo->findBy([], ['uploadedAt' => 'DESC']);

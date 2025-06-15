@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActualitesController!{% endblock %}
+
+{% block body %}
+
+<h1>Galerie</h1>
+{# <a href="{{ path('media_upload') }}">Uploader une photo/vidéo</a> #}
+
+{# <div style="display: flex; flex-wrap: wrap;">
+    {% for item in media %}
+        <div style="margin: 10px;">
+            {% if item.type == 'image' %}
+                <img src="/uploads/{{ item.filename }}" width="300">
+            {% elseif item.type == 'video' %}
+                <video width="300" controls>
+                    <source src="/uploads/{{ item.filename }}">
+                </video>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div> #}
+
+    <!-- ==========Blog-section========== -->
+    <section class="blog-section padding-bottom padding-top">
+        <div class="container">
+            <div class="row justify-content-center mb-40-none">
+            {% for item in media %}
+                <div class="col-sm-10 col-md-6 col-lg-4">
+                    <div class="post-item post-regular">
+                    {% if item.type == 'image' %}
+                        <div class="post-thumb">
+                            <a href="">
+                                <img src="/uploads/{{ item.filename }}" alt="blog">
+                            </a>
+                        </div>
+                        {% elseif item.type == 'video' %}
+                <video width="350" controls>
+                    <source src="/uploads/{{ item.filename }}">
+                </video>
+            {% endif %}
+                        <div class="post-content">
+                            <div class="post-header">
+                                <h4 class="title"><a href=""></a>
+                                </h4>
+                            </div>
+                            <div class="entry-content">
+                                {# <p>Pharetra aenean facilisis arcu aliquam, id diam mauris vivamus id vitae et. Eros
+                                    mauris quis Vitae leo phasellus donec, integer rutrum aliquam elit, non etiam turpis
+                                    nullam lectus urna urna, ullam</p> #}
+                                <div class="meta-post">
+                                    <div class="meta-thumb">
+                                        {# <a href="#0">
+                                            <img src="assets/images/blog/blog01.png" alt="blog">
+                                        </a> #}
+                                    </div>
+                                    <div class="meta-content">
+                                        <a href="#0">{{ item.uploadedAt|date('d M Y') }} </a>
+                                        {# <a href="#0">00 Comments</a> #}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+                {# <div class="col-sm-10 col-md-6 col-lg-4">
+                    <div class="post-item post-regular">
+                        <div class="post-thumb">
+                            <a href="blog-details.html">
+                                <img src="assets/images/blog/blog05.jpg" alt="blog">
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <h4 class="title"><a href="blog-details.html">Faucibus et curabitur lentesque urna Libero
+                                        odio</a>
+                                </h4>
+                            </div>
+                            <div class="entry-content">
+                                <p>Pharetra aenean facilisis arcu aliquam, id diam mauris vivamus id vitae et. Eros
+                                    mauris quis Vitae leo phasellus donec, integer rutrum aliquam elit, non etiam turpis
+                                    nullam lectus urna urna, ullam</p>
+                                <div class="meta-post">
+                                    <div class="meta-thumb">
+                                        <a href="#0">
+                                            <img src="assets/images/blog/blog02.png" alt="blog">
+                                        </a>
+                                    </div>
+                                    <div class="meta-content">
+                                        <a href="#0">20 Nov 2019</a>
+                                        <a href="#0">00 Comments</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> #}
+                
+                
+            </div>
+            {# <ul class="blog-pagination justify-content-center">
+                <li>
+                    <a href="blog-grid.html"><i class="fas fa-angle-left"></i></a>
+                </li>
+                <li>
+                    <a class="active" href="blog-grid.html">03</a>
+                </li>
+                <li>
+                    <a href="blog-classic.html">04</a>
+                </li>
+                <li>
+                    <a href="blog-grid.html"><i class="fas fa-angle-right"></i></a>
+                </li>
+            </ul> #}
+        </div>
+    </section>
+    <!-- ==========Blog-section========== -->
+
+{% endblock %}
