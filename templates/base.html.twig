@@ -1,23 +1,3 @@
-{# <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html> #}
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -28,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block stylesheets %}
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/lightcase.css">
-    <link rel="stylesheet" href="css/odometer.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/lightcase.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/odometer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     {% endblock %}
 
-    <link rel="shortcut icon" href="images/dauphinfavi.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/dauphinfavi.png') }}" type="image/x-icon">
 
     <title>Dauphins de NGOR</title>
 
@@ -50,14 +30,14 @@
     <!-- ==========Preloader========== -->
     <div class="preloader">
         <div class="preloader-wrapper">
-            <img src="css/ajax-loader.gif" alt="ajax-loader">
+            <img src="{{ asset('css/ajax-loader.gif') }}" alt="ajax-loader">
         </div>
     </div>
     <!-- ==========Preloader========== -->
 
     <!-- ==========scrolltotop========== -->
     <a href="#0" class="scrollToTop" title="ScrollToTop">
-        <img src="images/rocket.png" alt="rocket">
+        <img src="{{ asset('images/rocket.png') }}" alt="rocket">
     </a>
     <!-- ==========scrolltotop========== -->
 
@@ -116,7 +96,7 @@
                     <div class="logo">
                         <a href="#0">
                             {# <img src="images/logo/logo.png" alt="logo"> #}
-                             <img src="images/dauphin1.png" alt="logo" width="100px" height="100px">
+                             <img src="{{ asset('images/dauphin1.png') }}" alt="logo" width="100px" height="100px">
                         </a>
                     </div>
                     <ul class="menu ml-auto">
@@ -240,13 +220,17 @@
 
                         </li>
                         <li>
-                            <a href="{{ path('article_index') }}">Actualites</a>
+                            <a href="{{ path('galerie') }}">Galerie</a>
 
                         </li>
-                         <li>
+                        <li>
+                            <a href="{{ path('actu') }}">Actualites</a>
+
+                        </li>
+                         {# <li>
                             <a href="{{ path('article_index') }}">Articles</a>
 
-                        </li>
+                        </li> #}
                         
                     </ul>
                     <div class="header-bar d-lg-none">
@@ -270,7 +254,7 @@
             </div>
         </div>
     </header>
-    <div class="search-form-area">
+    {# <div class="search-form-area">
         <span class="hide-form">
             <i class="fas fa-times"></i>
         </span>
@@ -278,22 +262,22 @@
             <input type="text" placeholder="Search Here">
             <button type="submit"><i class="flaticon-search"></i></button>
         </form>
-    </div>
+    </div> #}
     <!-- ===========Header Cart=========== -->
     <div id="body-overlay" class="body-overlay"></div>
     <div class="cart-sidebar-area" id="cart-sidebar-area">
         <div class="top-content">
             <a href="#" class="logo">
-                <img src="images/dauphin1.png" alt="logo">
+                <img src="{{ asset('images/dauphin1.png') }}" alt="logo">
             </a>
             <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
         </div>
-        <div class="bottom-content">
+        {# <div class="bottom-content">
             <div class="cart-products">
                 <h4 class="title">Shopping cart</h4>
                 <div class="single-product-item">
                     <div class="thumb">
-                        <img src="images/shop/shop01.png" alt="shop">
+                        <img src="{{ asset('images/shop/shop01.png') }}" alt="shop">
                     </div>
                     <div class="content">
                         <h4 class="title">Swimming Shoes</h4>
@@ -345,7 +329,7 @@
                     <a href="checkout" class="custom-button active">Checkout</a>
                 </div>
             </div>
-        </div>
+        </div> #}
     </div>
     <!-- ===========Header Cart=========== -->
     <!-- ==========header-section========== -->
@@ -361,7 +345,7 @@
                         <div class="footer-widget footer-about">
                             <div class="footer-logo">
                                 <a href="index">
-                                    <img src="images/dauphin1.png" alt="logo" width="100px" height="100px">
+                                    <img src="{{ asset('images/dauphin1.png') }}" alt="logo" width="100px" height="100px">
                                 </a>
                             </div>
                             <p></p>
@@ -454,20 +438,20 @@
     <!-- ==========footer-section========== -->
 
     {% block javascripts %}
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/modernizr-3.6.0.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/jquery.ripples-min.js"></script>
-    <script src="js/lightcase.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/countdown.min.js"></script>
-    <script src="js/odometer.min.js"></script>
-    <script src="js/viewport.jquery.js"></script>
-    <script src="js/nice-select.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/modernizr-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.ripples-min.js') }}"></script>
+    <script src="{{ asset('js/lightcase.js') }}"></script>
+    <script src="{{ asset('js/swiper.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/countdown.min.js') }}"></script>
+    <script src="{{ asset('js/odometer.min.js') }}"></script>
+    <script src="{{ asset('js/viewport.jquery.js') }}"></script>
+    <script src="{{ asset('js/nice-select.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
      {% endblock %}
 </body>
 

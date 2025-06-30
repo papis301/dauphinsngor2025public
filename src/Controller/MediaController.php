@@ -22,6 +22,15 @@ class MediaController extends AbstractController
         ]);
     }
 
+    #[Route('/galerie', name: 'galerie')]
+    public function indexe(MediaRepository $repo): Response
+    {
+        $media = $repo->findBy([], ['uploadedAt' => 'DESC']);
+        return $this->render('media/galerie.html.twig', [
+            'media' => $media
+        ]);
+    }
+
     #[Route('/upload', name: 'media_upload')]
     public function upload(Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
     {

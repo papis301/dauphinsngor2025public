@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+
+<!-- ==========Gallery-Section========= -->
+    <div class="gallery-section padding-top padding-bottom">
+        <div class="container">
+            <div class="gallery-wrapper">
+            {% for item in media %}
+                {% if item.type == 'image' %}
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="/uploads/{{ item.filename }}" alt="gallery">
+                        <a href="/uploads/{{ item.filename }}" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}    
+                {# <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery02.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery02.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery03.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery03.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery04.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery04.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery05.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery05.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery06.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery06.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery07.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery07.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery08.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery08.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery09.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery09.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery10.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery10.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-thumb">
+                        <img src="assets/images/gallery/gallery11.jpg" alt="gallery">
+                        <a href="assets/images/gallery/gallery11.jpg" data-rel="lightcase:myCollection"><i class="flaticon-eye"></i></a>
+                    </div>
+                </div> #}
+            </div>
+            {# <div class="load-more text-center mt-4 mt-sm-5">
+                <a href="#0" class="custom-button">load more</a>
+            </div> #}
+        </div>
+    </div>
+{% endblock %}

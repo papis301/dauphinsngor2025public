@@ -1,10 +1,27 @@
  {% extends 'base.html.twig' %}
 
-{% block title %}Hello Actualites Blog{% endblock %}
+{% block title %}Hello Actualites {% endblock %}
 
 {% block body %}
 
 
+<section class="hero-section">
+        <div class="hero-area bg_img" data-background="images/aqua15.jpg">
+            <div class="container">
+                <h1 class="title">Actualites</h1>
+            </div>
+        </div>
+        <div class="container">
+            {# <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">home</a>
+                </li>
+                <li>
+                    blog
+                </li>
+            </ul> #}
+        </div>
+    </section>
     <!-- ==========Blog-section========== -->
     <div class="blog-section padding-bottom padding-top">
         <div class="container">
@@ -26,17 +43,17 @@
                                 <div class="blog-video-icon-wrapper">
                                     {#  #}
                                     <a href="https://www.youtube.com/embed/{{ article.youtubeUrl | split('?v=')[1] ?? article.youtubeUrl | split('/') | last }}"
-                                        data-rel="lightcase:myCollection"><img src="assets/images/blog/video-button.png" alt="blog-button"></a>
+                                        data-rel="lightcase:myCollection"><img src="{{ asset('images/blog/video-button.png') }}" alt="button"></a>
                                 </div>
                             </div>
                             <div class="post-content">
-                                <div class="post-header">
+                                {# <div class="post-header">
                                     <h4 class="title"><a href="">{{ article.title}}
                                         </a>
                                     </h4>
-                                </div>
+                                </div> #}
                                 <div class="entry-content">
-                                    <p>{{ article.content}}</p>
+                                    {# <p>{{ article.content}}</p> #}
                                     <div class="meta-post">
                                         {# <div class="meta-thumb">
                                             <a href="#0">
@@ -55,7 +72,7 @@
                             <li>Aucun article trouvé.</li>
                         {% endfor %}
                     </article>
-                    <ul class="blog-pagination">
+                    {# <ul class="blog-pagination">
                         <li>
                             <a href=""><i class="fas fa-angle-left"></i></a>
                         </li>
@@ -68,11 +85,11 @@
                         <li>
                             <a href=""><i class="fas fa-angle-right"></i></a>
                         </li>
-                    </ul>
+                    </ul> #}
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar bg-f9">
-                        <div class="widget widget-category">
+                        {# <div class="widget widget-category">
                             <div class="widget-header">
                                 <h4 class="title">Categories</h4>
                                 <span class="widget-shape"></span>
@@ -97,8 +114,8 @@
                                     <a href="#0">family Swimming</a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="widget widget-post">
+                        </div> #}
+                        {# <div class="widget widget-post">
                             <div class="widget-header">
                                 <h4 class="title">recent post</h4>
                                 <span class="widget-shape"></span>
@@ -190,12 +207,12 @@
                                     <a href="#0">January 2019</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> #}
                         <div class="widget widget-banner">
                             <div class="widget-banner-content">
-                                <h4 class="title">Have any question ?</h4>
+                                <h4 class="title">Vous avez une question ?</h4>
                                 <h6>hello</h6>
-                                <a href="Tel:943894848493">(+880) 1684635814</a>
+                                <a href="Tel:943894848493">(+221) 771267575</a>
                             </div>
                         </div>
                     </aside>
