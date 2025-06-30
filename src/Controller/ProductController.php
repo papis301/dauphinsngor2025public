@@ -27,6 +27,14 @@ final class ProductController extends AbstractController
         ]);
     }
 
+    #[Route(name: 'produitsboutique', methods: ['GET'])]
+    public function indexe(ProductRepository $productRepository): Response
+    {
+        return $this->render('product/boutique.html.twig', [
+            'products' => $productRepository->findAll(),
+        ]);
+    }
+
     #[Route('/product/new', name: 'app_product_new')]
     public function new(Request $request, EntityManagerInterface $em, SluggerInterface $slugger): Response
     {
@@ -62,15 +70,15 @@ final class ProductController extends AbstractController
         ]);
     }
 
-    // #[Route('/product', name: 'product_list')]
-    // public function list(EntityManagerInterface $em): Response
-    // {
-    //     $products = $em->getRepository(Product::class)->findAll();
+    #[Route('/product', name: 'product_list')]
+    public function list(EntityManagerInterface $em): Response
+    {
+        $products = $em->getRepository(Product::class)->findAll();
 
-    //     return $this->render('product/list.html.twig', [
-    //         'products' => $products
-    //     ]);
-    // }
+        return $this->render('product/boutique.html.twig', [
+            'products' => $products
+        ]);
+    }
 
     #[Route('/{id}', name: 'app_product_show', methods: ['GET'])]
     public function show(Product $product): Response
