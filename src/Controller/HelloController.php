@@ -21,4 +21,20 @@ final class HelloController extends AbstractController
             'controller_name' => 'HelloController',
         ]);
     }
+
+    #[Route('/club', name: 'club')]
+    public function indexe(): Response
+    {
+        return $this->render('hello/leclub.html.twig', [
+            'controller_name' => 'HelloController',
+        ]);
+    }
+
+    #[Route('/apropos', name: 'apropos')]
+    public function indexeS(): Response
+    {
+        return $this->render('hello/apropos.html.twig', [
+            'controller_name' => 'HelloController',
+        ]);
+    }
 }
